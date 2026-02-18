@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy Salon</title>
-    
+
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/media-queries.css">
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -18,18 +18,223 @@
 
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-white main-navbar shadow-sm navbar-container">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="Easy Salon Logo" class="logo-img">
+            </a>
+
+            <div class="custom-toggler" id="mobileMenuTrigger">
+                <div class="toggler-bars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <div class="ms-auto d-flex flex-column flex-lg-row align-items-lg-center gap-3 gap-lg-4 mt-3 mt-lg-0">
+                    <div class="social-links d-flex gap-3 align-items-center justify-content-center">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center gap-2">
+                        <img src="assets/canada.svg" alt="Canada Flag" class="flag-icon">
+
+                        <span class="phone-number">+1 716 340 4934</span>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center gap-2">
+                        <img src="assets/india.webp" alt="India Flag" class="flag-icon">
+
+                        <span class="phone-number">+91 62838 09300</span>
+                    </div>
+
+                    <div class="btn-demo rounded-pill" data-bs-toggle="modal" data-bs-target="#ModalTogglesix"
+                        style="cursor:pointer">
+                        Get Free Demo
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay (Slides from top) -->
+    <div class="mobile-nav-overlay" id="mobileOverlay">
+        <div class="mobile-nav-content">
+            <div class="mobile-social-wrap">
+                <p class="menu-label">Follow Us</p>
+                <div class="mobile-social-links">
+                    <a href="#" style="--i:1"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" style="--i:2"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" style="--i:3"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links or other menu items could go here -->
+            <!-- Main Mobile CTA -->
+            <div class="mobile-cta-wrap">
+                <div class="btn-demo btn-mobile-full rounded-pill" data-bs-toggle="modal"
+                    data-bs-target="#ModalTogglesix">
+                    Book Free Demo
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+
+            <!-- Left Content -->
+            <div class="hero-left">
+                <h1 class="hero-heading">
+                    Affordable, Smart<br>
+                    Salon Management<br>
+                    Solutions
+                </h1>
+                <p class="hero-subtext">
+                    All-in-one salon management for automating bookings, billing,
+                    staff, inventory, and customer engagement, powered by WhatsApp
+                    and built for modern, multi-branch salons.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn-try-easy" data-bs-toggle="modal" data-bs-target="#ModalTogglesix">Try Easy
+                        Software<span></span><span></span><span></span><span></span></button>
+                    <button class="btn-live-demo">
+                        Get Live Demo
+                        <span class="demo-arrow">
+                            <i class="fa-solid fa-play"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="dashboard-scene">
+
+                    <!-- Top faded peek (top portion of dashboard, fading upward) -->
+                    <div class="dashboard-peek dashboard-peek--top">
+                        <img src="assets/Dashboard.png" alt="" aria-hidden="true"
+                            class="dashboard-peek-img  dashboard-peek-img--bottom">
+                    </div>
+
+                    <!-- Main dashboard card -->
+                    <div class="dashboard-main" id="dashboardMain">
+                        <img src="assets/Dashboard.png" alt="Easy Salon Dashboard" class="dashboard-main-img">
+                    </div>
+
+                    <!-- Bottom faded peek (bottom portion of dashboard, fading downward) -->
+                    <div class="dashboard-peek dashboard-peek--bottom">
+                        <img src="assets/Dashboard.png" alt="" aria-hidden="true"
+                            class="dashboard-peek-img dashboard-peek-img--top">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 
+    <div class="modal fade" id="ModalTogglesix" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered demo-modal-dialog">
+            <div class="modal-content demo-modal-content">
+
+                <!-- Decorative blobs -->
+                <div class="demo-blob demo-blob--1"></div>
+                <div class="demo-blob demo-blob--2"></div>
+
+                <!-- Close button -->
+                <button type="button" class="demo-close-btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <!-- Header -->
+                <div class="demo-modal-header">
+                    <div class="demo-icon-wrap">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h2 class="demo-modal-title" id="demoModalLabel">Register for a Demo</h2>
+                    <p class="demo-modal-subtitle">Experience the future of salon management — free &amp; instant.</p>
+                </div>
+
+                <!-- Form -->
+                <form class="demo-form" id="demoForm" novalidate>
+
+                    <div class="demo-field-group">
+                        <div class="demo-field">
+                            <i class="fa-solid fa-store demo-field-icon"></i>
+                            <input type="text" id="businessName" class="demo-input" placeholder=" " required
+                                autocomplete="off">
+                            <label for="businessName" class="demo-label">Business Name</label>
+                            <span class="demo-focus-bar"></span>
+                        </div>
+
+                        <div class="demo-field">
+                            <i class="fa-solid fa-user demo-field-icon"></i>
+                            <input type="text" id="contactPerson" class="demo-input" placeholder=" " required
+                                autocomplete="off">
+                            <label for="contactPerson" class="demo-label">Contact Person Name</label>
+                            <span class="demo-focus-bar"></span>
+                        </div>
+
+                        <div class="demo-field">
+                            <i class="fa-solid fa-envelope demo-field-icon"></i>
+                            <input type="email" id="demoEmail" class="demo-input" placeholder=" " required
+                                autocomplete="off">
+                            <label for="demoEmail" class="demo-label">Email Address</label>
+                            <span class="demo-focus-bar"></span>
+                        </div>
+
+                        <div class="demo-field demo-field--phone">
+                            <i class="fa-solid fa-phone demo-field-icon"></i>
+                            <div class="demo-phone-input-group">
+                                <div class="demo-country-selector">
+                                    <select class="demo-country-code" id="countryCode">
+                                        <option value="+91">+91</option>
+                                        <option value="+1">+1</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down demo-chevron"></i>
+                                </div>
+                                <div class="demo-input-wrapper">
+                                    <input type="tel" id="contactNumber" class="demo-input" placeholder=" " required
+                                        autocomplete="off">
+                                    <label for="contactNumber" class="demo-label">Contact Number</label>
+                                </div>
+                            </div>
+                            <span class="demo-focus-bar"></span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="demo-submit-btn">
+                        <span class="demo-submit-text">Book My Free Demo</span>
+                        <span class="demo-submit-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                        <span></span><span></span><span></span><span></span>
+                    </button>
+
+                    <p class="demo-privacy"><i class="fa-solid fa-lock"></i> By registering, you agree to our <a
+                            href="#">Terms & Conditions</a></p>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
 
 
-<script src="script/script.js"></script>
+    <script src="script/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    
+
 </body>
 
 </html>
