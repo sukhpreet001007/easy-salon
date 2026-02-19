@@ -68,5 +68,62 @@
         }
     }
 
+    // 5. REVIEWS CAROUSEL
+    const track = document.querySelector('.reviews-carousel-track');
+    const prevBtn = document.getElementById('prevReview');
+    const nextBtn = document.getElementById('nextReview');
+
+    if (track && prevBtn && nextBtn) {
+        let currentIndex = 0;
+
+        const cards = Array.from(track.querySelectorAll('.review-card'));
+        const totalOriginalCards = cards.length;
+
+        // Clone for infinite loop
+        cards.forEach(card => track.appendChild(card.cloneNode(true)));
+        cards.forEach(card => track.insertBefore(card.cloneNode(true), track.firstChild));
+
+        currentIndex = totalOriginalCards;
+
+        function updateCarousel(instant = false) {
+            const cardElement = track.querySelector('.review-card');
+            const cardWidth = cardElement.offsetWidth + 30; // card width + gap
+
+            track.style.transition = instant ? 'none' : 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+
+            // Calculate offset to center the current card in the viewport
+            const centerOffset = (window.innerWidth / 2) - (cardWidth / 2);
+            const moveAmount = (currentIndex * cardWidth) - centerOffset;
+
+            track.style.transform = `translateX(-${moveAmount}px)`;
+        }
+
+        setTimeout(() => updateCarousel(true), 50);
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex++;
+            updateCarousel();
+            if (currentIndex >= totalOriginalCards * 2) {
+                setTimeout(() => {
+                    currentIndex = totalOriginalCards;
+                    updateCarousel(true);
+                }, 600);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex--;
+            updateCarousel();
+            if (currentIndex < totalOriginalCards) {
+                setTimeout(() => {
+                    currentIndex = totalOriginalCards * 2 - 1;
+                    updateCarousel(true);
+                }, 600);
+            }
+        });
+
+        window.addEventListener('resize', () => updateCarousel(true));
+    }
+
 })();
 
