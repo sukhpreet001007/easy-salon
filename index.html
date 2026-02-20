@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/media-queries.css">
+    <link rel="stylesheet" href="style/animations.css">
+    <link rel="stylesheet" href="style/thread.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -150,7 +152,7 @@
             <div class="container feature-container">
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-6">
-                        <div class="feature-card">
+                        <div class="feature-card scroll-animate zoom-in">
                             <h3 class="feature-title">Appointment</h3>
                             <p class="feature-desc">Appointment Management enables 24/7 bookings via WhatsApp, online,
                                 or
@@ -161,7 +163,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6">
-                        <div class="feature-card">
+                        <div class="feature-card scroll-animate zoom-in">
                             <h3 class="feature-title">Instant Check-In</h3>
                             <p class="feature-desc">Instant Check-In lets customers check in via QR codes or links,
                                 eliminating queues and reducing front-desk workload. With live updates, tamper-proof
@@ -171,7 +173,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6">
-                        <div class="feature-card">
+                        <div class="feature-card scroll-animate zoom-in">
                             <h3 class="feature-title">Browse Our Offers & Gallery</h3>
                             <p class="feature-desc">The Showcase feature lets businesses display services, promotions,
                                 and
@@ -182,7 +184,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6">
-                        <div class="feature-card">
+                        <div class="feature-card scroll-animate zoom-in">
                             <h3 class="feature-title">Client Feedback Hub</h3>
                             <p class="feature-desc">Client Feedback Hub automates feedback collection via WhatsApp,
                                 text, or
@@ -196,7 +198,8 @@
 
                 <!-- QR CTA Box -->
                 <div class="qr-cta-wrapper">
-                    <div class="qr-cta-box d-flex align-items-center justify-content-between flex-wrap">
+                    <div
+                        class="qr-cta-box d-flex align-items-center justify-content-between flex-wrap scroll-animate fade-up">
                         <div class="qr-content d-flex align-items-center">
                             <div class="qr-image-placeholder">
                                 <img src="assets/qr-girl.png" alt="QR Scanner" class="qr-main-img">
@@ -231,12 +234,12 @@
         <!-- Pinkish Shade Part -->
         <div class="cloud-box-bottom">
             <div class="container text-center">
-                <h4 class="brands-headline">
+                <h4 class="brands-headline scroll-animate drop-down">
                     Serving 2000+ Businesses,<br>
                     In Over 120+ Cities Worldwide
                 </h4>
 
-                <div class="brands-marquee-container">
+                <div class="brands-marquee-container scroll-animate fade-up">
                     <div class="brands-track">
                         <!-- Brand Item repeated as requested -->
                         <div class="brand-unit">
@@ -296,7 +299,7 @@
                     </div>
                 </div>
             </div>
-            <div class="growth-header-wrap">
+            <div class="growth-header-wrap scroll-animate fade-up">
                 <img src="assets/left-sparkle.png" class="marketing-sparkle sparkle-left" alt="">
                 <h2 class="growth-main-title">Unlock Business Growth with Effective Marketing Tools</h2>
                 <img src="assets/right-sparkle.png" class="marketing-sparkle sparkle-right" alt="">
@@ -309,14 +312,23 @@
             <div class="container text-center">
                 <!-- Marketing Features Rows -->
                 <div class="marketing-features-rows">
+                    <!-- Thread Animation Elements -->
+                    <div class="marketing-thread-line">
+                        <div class="marketing-thread-progress"></div>
+                    </div>
+
+                    <!-- Start Tick (Top of Thread) -->
+                    <div class="marketing-tick tick-start"><i class="fa-solid fa-check"></i></div>
+
                     <!-- Row 1: Image Left, Text Right -->
                     <div class="marketing-row">
-                        <div class="marketing-img-col">
+                        <div class="marketing-img-col scroll-animate slide-left">
 
                             <img src="assets/left-1.png" alt="Marketing Feature 1" class="marketing-feature-img">
 
                         </div>
-                        <div class="marketing-text-col">
+                        <div class="marketing-tick"><i class="fa-solid fa-check"></i></div>
+                        <div class="marketing-text-col scroll-animate drop-down">
                             <h3 class="marketing-feature-title">Unlock Business Growth with<br>Effective Marketing Tools
                             </h3>
                             <div class="marketing-feature-content">
@@ -334,11 +346,12 @@
 
                     <!-- Row 2: Text Left, Image Right -->
                     <div class="marketing-row row-reverse">
-                        <div class="marketing-img-col">
+                        <div class="marketing-img-col scroll-animate slide-right">
                             <img src="assets/right-1.png" alt="Marketing Feature 2"
                                 class="marketing-feature-img has-shadow">
                         </div>
-                        <div class="marketing-text-col">
+                        <div class="marketing-tick"><i class="fa-solid fa-check"></i></div>
+                        <div class="marketing-text-col scroll-animate drop-down">
                             <h3 class="marketing-feature-title">Strengthen Client Loyalty</h3>
                             <div class="marketing-feature-content">
                                 <p><strong>Referral Rewards</strong> turns customers into brand advocates with automated
@@ -355,10 +368,11 @@
 
                     <!-- Row 3: Image Left, Text Right -->
                     <div class="marketing-row">
-                        <div class="marketing-img-col">
+                        <div class="marketing-img-col scroll-animate slide-left">
                             <img src="assets/left-2.png" alt="Marketing Feature 3" class="marketing-feature-img">
                         </div>
-                        <div class="marketing-text-col">
+                        <div class="marketing-tick"><i class="fa-solid fa-check"></i></div>
+                        <div class="marketing-text-col scroll-animate drop-down">
                             <h3 class="marketing-feature-title">Smart Reports for Growth</h3>
                             <div class="marketing-feature-content">
                                 <p><strong>Referral Rewards</strong> turns customers into brand advocates with automated
@@ -372,6 +386,9 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- End Tick (Bottom of Thread) -->
+                    <div class="marketing-tick tick-end"><i class="fa-solid fa-check"></i></div>
                 </div>
             </div>
         </div>
@@ -381,7 +398,8 @@
         <!-- Bottom Gradient Section (Blue) -->
         <div class="bottom-gradient-cta">
             <div class="container text-center">
-                <button class="btn-demo btn-try-final" data-bs-toggle="modal" data-bs-target="#ModalTogglesix">
+                <button class="btn-demo btn-try-final scroll-animate zoom-in" data-bs-toggle="modal"
+                    data-bs-target="#ModalTogglesix">
                     Try Easy Software
                     <span></span><span></span><span></span><span></span>
                 </button>
@@ -392,18 +410,19 @@
     <!-- NEW: Reviews Carousel Section -->
     <div class="reviews-section">
         <div class="container text-center">
-            <h2 class="reviews-main-title">Trusted by 2000+ salons & med spas<br>in 120+ cities across globe</h2>
+            <h2 class="reviews-main-title scroll-animate drop-down">Trusted by 2000+ salons & med spas<br>in 120+ cities
+                across globe</h2>
 
-            <div class="google-rating-wrap">
+            <div class="google-rating-wrap scroll-animate fade-up">
                 <img src="assets/google.png" alt="Google" class="google-logo">
                 <div class="stars-rating">
-                   
+
                 </div>
             </div>
         </div>
 
         <!-- Carousel moved OUT of container for edge-fading effect -->
-        <div class="reviews-carousel-outer">
+        <div class="reviews-carousel-outer scroll-animate fade-up">
             <div class="reviews-carousel-wrapper">
                 <div class="reviews-carousel-track">
                     <!-- Review Card 1 -->
@@ -655,6 +674,8 @@
 
 
     <script src="script/script.js"></script>
+    <script src="script/animations.js"></script>
+    <script src="script/thread.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>

@@ -1,0 +1,58 @@
+/* Base class for all animated elements */
+.scroll-animate {
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+/* Slide in from Left (starts off-screen to the left) */
+.scroll-animate.slide-left {
+    transform: translateX(-100px);
+}
+
+/* Slide in from Right (starts off-screen to the right) */
+.scroll-animate.slide-right {
+    transform: translateX(100px);
+}
+
+/* Slide in from Bottom (Fade Up) */
+.scroll-animate.fade-up {
+    transform: translateY(50px);
+}
+
+/* Drop Down (starts from top and drops into place) */
+.scroll-animate.drop-down {
+    transform: translateY(-80px);
+    /* Starts 80px above */
+}
+
+/* Zoom In effect */
+.scroll-animate.zoom-in {
+    transform: scale(0.9);
+}
+
+/* Active State - when in viewport */
+.scroll-animate.active {
+    opacity: 1;
+    transform: translate(0) scale(1);
+    /* Resets all transforms */
+}
+
+/* Mobile adjustments: reduce movement distance on small screens to prevent horizontal scroll issues if overflow not hidden */
+@media (max-width: 768px) {
+    .scroll-animate.slide-left {
+        transform: translateX(-30px);
+    }
+
+    .scroll-animate.slide-right {
+        transform: translateX(30px);
+    }
+
+    .scroll-animate.fade-up {
+        transform: translateY(30px);
+    }
+
+    .scroll-animate.drop-down {
+        transform: translateY(-40px);
+    }
+}

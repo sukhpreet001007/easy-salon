@@ -1,0 +1,106 @@
+/* Thread Container & Line */
+.marketing-features-rows {
+    position: relative;
+    /* Ensure thread is positioned relative to this container */
+}
+
+/* The vertical line itself */
+.marketing-thread-line {
+    position: absolute;
+    top: 50px;
+    /* Start slightly below the top */
+    bottom: 50px;
+    /* End slightly above the bottom */
+    left: 49%;
+    width: 4px;
+    /* background: #e0e0e0; */
+    /* Background track color (light gray) */
+    transform: translateX(-50%);
+    z-index: 0;
+    border-radius: 4px;
+    display: block;
+}
+
+/* The filling colored line */
+.marketing-thread-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    /* JS will update this */
+    background: #FF9FA1;
+    /* Primary Coral */
+    border-radius: 4px;
+    transition: height 0.1s linear;
+    box-shadow: 0 0 10px rgba(255, 159, 161, 0.6);
+}
+
+/* Ticks */
+.marketing-tick {
+    position: absolute;
+    left: 49%;
+    top: 50%;
+    /* Center of the row vertically */
+    transform: translate(-50%, -50%) scale(0);
+    /* Start hidden/scaled down */
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 3px solid #FF9FA1;
+    border-radius: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF9FA1;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.marketing-tick.active {
+    transform: translate(-50%, -50%) scale(1);
+    background: #FF9FA1;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 159, 161, 0.6);
+}
+
+/* Positioning for Start and End ticks */
+.marketing-tick.tick-start {
+    top: 50px;
+    /* Matches thread top */
+    transform: translate(-50%, 0) scale(0);
+    /* Override translate-y */
+}
+
+.marketing-tick.tick-start.active {
+    transform: translate(-50%, 0) scale(1);
+}
+
+.marketing-tick.tick-end {
+    top: auto;
+    bottom: 50px;
+    /* Matches thread bottom */
+    transform: translate(-50%, 0) scale(0);
+    /* Override translate-y */
+}
+
+.marketing-tick.tick-end.active {
+    transform: translate(-50%, 0) scale(1);
+}
+
+/* Disappear class for when section ends */
+.marketing-thread-line.thread-hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Mobile Hide */
+@media (max-width: 991px) {
+
+    .marketing-thread-line,
+    .marketing-tick {
+        display: none !important;
+    }
+}
