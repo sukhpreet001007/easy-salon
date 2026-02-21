@@ -113,12 +113,41 @@
     .country-flag {
         width: 18px;
     }
-     .brand-unit {
+
+    .brand-unit {
         flex: 0 0 50%;
         padding: 0px;
         gap: 8px;
         margin: 0;
         overflow: visible;
+    }
+
+    /* Features Overview Mobile */
+    .overview-title {
+        font-size: 32px !important;
+        margin-bottom: 40px !important;
+        line-height: 1.3 !important;
+        padding: 0 10px;
+    }
+
+    .feature-overview-box {
+        padding: 35px 25px !important;
+        text-align: center;
+        align-items: center !important;
+    }
+
+    .box-title {
+        font-size: 20px !important;
+    }
+
+    .big-cloud-asset.cloud-1 {
+        width: 180% !important;
+        left: -40% !important;
+    }
+
+    .big-cloud-asset.cloud-2 {
+        width: 180% !important;
+        right: -40% !important;
     }
 }
 
@@ -268,7 +297,8 @@
         font-size: 1rem !important;
         width: auto !important;
     }
-     /* Brands Slider Tablet Landscape */
+
+    /* Brands Slider Tablet Landscape */
     .brand-unit {
         flex: 0 0 20%;
         /* 4 columns for tablet landscape */

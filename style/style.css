@@ -1363,6 +1363,63 @@ body {
     /* Subtle shadow on the logo itself instead of box */
 }
 
+/* Master Wrapper for Blended Theme */
+.features-master-wrapper {
+    background: linear-gradient(180deg,
+            #051130 0%,
+            #0B356A 15%,
+            #2557A0 30%,
+            #6085E4 45%,
+            #F288E2 55%,
+            #FF9FA1 70%,
+            #FFCECF 85%,
+            #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+    /* Prevent cloud overflow */
+}
+
+/* Infinitely Flowing Clouds */
+.big-clouds-flow-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* Behind boxes */
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.clouds-track {
+    display: flex;
+    width: 400%;
+    /* Enough room for 2 sets of clouds */
+    height: 100%;
+    animation: cloudsFlow 60s linear infinite;
+}
+
+.big-cloud-item {
+    width: 25%;
+    /* Reduced cloud size */
+    height: 100%;
+    object-fit: contain;
+    filter: blur(8px);
+    /* Soften the edges */
+}
+
+@keyframes cloudsFlow {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-25%);
+        /* Adjusted for smaller cloud units */
+    }
+}
+
 .brand-origin {
     display: flex;
     align-items: center;
@@ -1387,7 +1444,7 @@ body {
 }
 
 @media (max-width: 991px) {
-   
+
 
     .brand-card {
         width: 230px;
@@ -1404,6 +1461,11 @@ body {
         /* Slight edge padding */
     }
 
+
+    .cloud-asset {
+        opacity: 0.6;
+    }
+
     .cloud-asset {
         opacity: 0.6;
     }
@@ -1415,6 +1477,847 @@ body {
     .cloud-2 {
         width: 400px;
     }
+}
+
+/* Galaxy Stars Falling Animation (Global) */
+.stars-galaxy-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 5px white, 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: starRain var(--duration) linear infinite;
+    animation-delay: var(--delay);
+    left: var(--left);
+    top: -10px;
+}
+
+/* Randomized properties for 50 stars */
+.star:nth-child(1) {
+    --left: 5%;
+    --duration: 4s;
+    --delay: 0s;
+}
+
+.star:nth-child(2) {
+    --left: 15%;
+    --duration: 6s;
+    --delay: 1s;
+}
+
+.star:nth-child(3) {
+    --left: 25%;
+    --duration: 5s;
+    --delay: 2s;
+}
+
+.star:nth-child(4) {
+    --left: 35%;
+    --duration: 7s;
+    --delay: 0.5s;
+}
+
+.star:nth-child(5) {
+    --left: 45%;
+    --duration: 4.5s;
+    --delay: 1.5s;
+}
+
+.star:nth-child(6) {
+    --left: 55%;
+    --duration: 8s;
+    --delay: 2.5s;
+}
+
+.star:nth-child(7) {
+    --left: 65%;
+    --duration: 5.5s;
+    --delay: 0.2s;
+}
+
+.star:nth-child(8) {
+    --left: 75%;
+    --duration: 6.5s;
+    --delay: 1.8s;
+}
+
+.star:nth-child(9) {
+    --left: 85%;
+    --duration: 7.5s;
+    --delay: 0.8s;
+}
+
+.star:nth-child(10) {
+    --left: 95%;
+    --duration: 5s;
+    --delay: 3s;
+}
+
+.star:nth-child(11) {
+    --left: 10%;
+    --duration: 6.2s;
+    --delay: 0.5s;
+}
+
+.star:nth-child(12) {
+    --left: 20%;
+    --duration: 4.8s;
+    --delay: 2.2s;
+}
+
+.star:nth-child(13) {
+    --left: 30%;
+    --duration: 7.2s;
+    --delay: 1.2s;
+}
+
+.star:nth-child(14) {
+    --left: 40%;
+    --duration: 5.8s;
+    --delay: 0.3s;
+}
+
+.star:nth-child(15) {
+    --left: 50%;
+    --duration: 6.7s;
+    --delay: 2.7s;
+}
+
+.star:nth-child(16) {
+    --left: 60%;
+    --duration: 5.2s;
+    --delay: 1.1s;
+}
+
+.star:nth-child(17) {
+    --left: 70%;
+    --duration: 8.5s;
+    --delay: 0.1s;
+}
+
+.star:nth-child(18) {
+    --left: 80%;
+    --duration: 4.2s;
+    --delay: 3.5s;
+}
+
+.star:nth-child(19) {
+    --left: 90%;
+    --duration: 6.9s;
+    --delay: 1.4s;
+}
+
+.star:nth-child(20) {
+    --left: 100%;
+    --duration: 5.6s;
+    --delay: 0.9s;
+}
+
+.star:nth-child(21) {
+    --left: 3%;
+    --duration: 5.2s;
+    --delay: 4.1s;
+}
+
+.star:nth-child(22) {
+    --left: 12%;
+    --duration: 6.8s;
+    --delay: 3.2s;
+}
+
+.star:nth-child(23) {
+    --left: 22%;
+    --duration: 4.5s;
+    --delay: 0.8s;
+}
+
+.star:nth-child(24) {
+    --left: 32%;
+    --duration: 7.1s;
+    --delay: 2.4s;
+}
+
+.star:nth-child(25) {
+    --left: 42%;
+    --duration: 5.5s;
+    --delay: 1.6s;
+}
+
+.star:nth-child(26) {
+    --left: 52%;
+    --duration: 8.2s;
+    --delay: 0.3s;
+}
+
+.star:nth-child(27) {
+    --left: 62%;
+    --duration: 6.1s;
+    --delay: 4.8s;
+}
+
+.star:nth-child(28) {
+    --left: 72%;
+    --duration: 3.8s;
+    --delay: 2.1s;
+}
+
+.star:nth-child(29) {
+    --left: 82%;
+    --duration: 7.4s;
+    --delay: 3.5s;
+}
+
+.star:nth-child(30) {
+    --left: 92%;
+    --duration: 5.9s;
+    --delay: 1.2s;
+}
+
+.star:nth-child(31) {
+    --left: 8%;
+    --duration: 4.7s;
+    --delay: 0.6s;
+}
+
+.star:nth-child(32) {
+    --left: 18%;
+    --duration: 7.3s;
+    --delay: 3.1s;
+}
+
+.star:nth-child(33) {
+    --left: 28%;
+    --duration: 5.1s;
+    --delay: 1.9s;
+}
+
+.star:nth-child(34) {
+    --left: 38%;
+    --duration: 6.6s;
+    --delay: 0.4s;
+}
+
+.star:nth-child(35) {
+    --left: 48%;
+    --duration: 8.5s;
+    --delay: 2.7s;
+}
+
+.star:nth-child(36) {
+    --left: 58%;
+    --duration: 4.2s;
+    --delay: 4.3s;
+}
+
+.star:nth-child(37) {
+    --left: 68%;
+    --duration: 7.7s;
+    --delay: 0.1s;
+}
+
+.star:nth-child(38) {
+    --left: 78%;
+    --duration: 5.4s;
+    --delay: 3.8s;
+}
+
+.star:nth-child(39) {
+    --left: 88%;
+    --duration: 6.3s;
+    --delay: 1.5s;
+}
+
+.star:nth-child(40) {
+    --left: 98%;
+    --duration: 4.9s;
+    --delay: 2.3s;
+}
+
+.star:nth-child(41) {
+    --left: 2%;
+    --duration: 7.8s;
+    --delay: 1.1s;
+}
+
+.star:nth-child(42) {
+    --left: 24%;
+    --duration: 5.3s;
+    --delay: 4.5s;
+}
+
+.star:nth-child(43) {
+    --left: 36%;
+    --duration: 6.1s;
+    --delay: 0.7s;
+}
+
+.star:nth-child(44) {
+    --left: 44%;
+    --duration: 4.6s;
+    --delay: 3.9s;
+}
+
+.star:nth-child(45) {
+    --left: 56%;
+    --duration: 8.9s;
+    --delay: 2.2s;
+}
+
+.star:nth-child(46) {
+    --left: 66%;
+    --duration: 3.2s;
+    --delay: 0.5s;
+}
+
+.star:nth-child(47) {
+    --left: 76%;
+    --duration: 7.5s;
+    --delay: 4.2s;
+}
+
+.star:nth-child(48) {
+    --left: 86%;
+    --duration: 5.7s;
+    --delay: 1.8s;
+}
+
+.star:nth-child(49) {
+    --left: 94%;
+    --duration: 6.4s;
+    --delay: 3.1s;
+}
+
+.star:nth-child(50) {
+    --left: 1%;
+    --duration: 4.3s;
+    --delay: 0.2s;
+}
+
+.star:nth-child(51) {
+    --left: 7%;
+    --duration: 5.5s;
+    --delay: 4.8s;
+}
+
+.star:nth-child(52) {
+    --left: 14%;
+    --duration: 3.9s;
+    --delay: 1.1s;
+}
+
+.star:nth-child(53) {
+    --left: 21%;
+    --duration: 7.4s;
+    --delay: 2.9s;
+}
+
+.star:nth-child(54) {
+    --left: 33%;
+    --duration: 6.2s;
+    --delay: 0.4s;
+}
+
+.star:nth-child(55) {
+    --left: 41%;
+    --duration: 4.8s;
+    --delay: 3.7s;
+}
+
+.star:nth-child(56) {
+    --left: 54%;
+    --duration: 8.1s;
+    --delay: 1.5s;
+}
+
+.star:nth-child(57) {
+    --left: 63%;
+    --duration: 5.7s;
+    --delay: 4.2s;
+}
+
+.star:nth-child(58) {
+    --left: 71%;
+    --duration: 6.9s;
+    --delay: 0.1s;
+}
+
+.star:nth-child(59) {
+    --left: 84%;
+    --duration: 4.3s;
+    --delay: 2.6s;
+}
+
+.star:nth-child(60) {
+    --left: 96%;
+    --duration: 7.8s;
+    --delay: 1.3s;
+}
+
+.star:nth-child(61) {
+    --left: 4%;
+    --duration: 6.5s;
+    --delay: 3.4s;
+}
+
+.star:nth-child(62) {
+    --left: 11%;
+    --duration: 4.2s;
+    --delay: 0.8s;
+}
+
+.star:nth-child(63) {
+    --left: 27%;
+    --duration: 8.4s;
+    --delay: 4.5s;
+}
+
+.star:nth-child(64) {
+    --left: 31%;
+    --duration: 5.1s;
+    --delay: 2.1s;
+}
+
+.star:nth-child(65) {
+    --left: 49%;
+    --duration: 6.7s;
+    --delay: 0.6s;
+}
+
+.star:nth-child(66) {
+    --left: 59%;
+    --duration: 7.2s;
+    --delay: 3.9s;
+}
+
+.star:nth-child(67) {
+    --left: 69%;
+    --duration: 4.9s;
+    --delay: 1.2s;
+}
+
+.star:nth-child(68) {
+    --left: 79%;
+    --duration: 5.8s;
+    --delay: 4.7s;
+}
+
+.star:nth-child(69) {
+    --left: 89%;
+    --duration: 8.6s;
+    --delay: 2.2s;
+}
+
+.star:nth-child(70) {
+    --left: 2%;
+    --duration: 3.5s;
+    --delay: 0.5s;
+}
+
+.star:nth-child(71) {
+    --left: 17%;
+    --duration: 6.3s;
+    --delay: 3.1s;
+}
+
+.star:nth-child(72) {
+    --left: 23%;
+    --duration: 5.2s;
+    --delay: 1.4s;
+}
+
+.star:nth-child(73) {
+    --left: 38%;
+    --duration: 7.9s;
+    --delay: 4.3s;
+}
+
+.star:nth-child(74) {
+    --left: 43%;
+    --duration: 4.4s;
+    --delay: 0.7s;
+}
+
+.star:nth-child(75) {
+    --left: 57%;
+    --duration: 6.1s;
+    --delay: 3.5s;
+}
+
+.star:nth-child(76) {
+    --left: 67%;
+    --duration: 8.2s;
+    --delay: 1.8s;
+}
+
+.star:nth-child(77) {
+    --left: 73%;
+    --duration: 5.4s;
+    --delay: 4.6s;
+}
+
+.star:nth-child(78) {
+    --left: 87%;
+    --duration: 4.1s;
+    --delay: 0.3s;
+}
+
+.star:nth-child(79) {
+    --left: 93%;
+    --duration: 7.6s;
+    --delay: 2.7s;
+}
+
+.star:nth-child(80) {
+    --left: 6%;
+    --duration: 5.9s;
+    --delay: 3.3s;
+}
+
+.star:nth-child(81) {
+    --left: 19%;
+    --duration: 4.7s;
+    --delay: 1.1s;
+}
+
+.star:nth-child(82) {
+    --left: 26%;
+    --duration: 8.8s;
+    --delay: 4.9s;
+}
+
+.star:nth-child(83) {
+    --left: 34%;
+    --duration: 6.4s;
+    --delay: 0.2s;
+}
+
+.star:nth-child(84) {
+    --left: 46%;
+    --duration: 3.7s;
+    --delay: 2.8s;
+}
+
+.star:nth-child(85) {
+    --left: 53%;
+    --duration: 7.1s;
+    --delay: 4.1s;
+}
+
+.star:nth-child(86) {
+    --left: 61%;
+    --duration: 5.6s;
+    --delay: 1.5s;
+}
+
+.star:nth-child(87) {
+    --left: 74%;
+    --duration: 4.5s;
+    --delay: 3.6s;
+}
+
+.star:nth-child(88) {
+    --left: 83%;
+    --duration: 6.8s;
+    --delay: 0.9s;
+}
+
+.star:nth-child(89) {
+    --left: 91%;
+    --duration: 8.3s;
+    --delay: 4.4s;
+}
+
+.star:nth-child(90) {
+    --left: 9%;
+    --duration: 5.3s;
+    --delay: 2.1s;
+}
+
+.star:nth-child(91) {
+    --left: 16%;
+    --duration: 7.7s;
+    --delay: 0.4s;
+}
+
+.star:nth-child(92) {
+    --left: 29%;
+    --duration: 4.6s;
+    --delay: 3.2s;
+}
+
+.star:nth-child(93) {
+    --left: 37%;
+    --duration: 6.1s;
+    --delay: 1.7s;
+}
+
+.star:nth-child(94) {
+    --left: 48%;
+    --duration: 3.4s;
+    --delay: 4.8s;
+}
+
+.star:nth-child(95) {
+    --left: 56%;
+    --duration: 8.9s;
+    --delay: 0.5s;
+}
+
+.star:nth-child(96) {
+    --left: 64%;
+    --duration: 5.2s;
+    --delay: 2.9s;
+}
+
+.star:nth-child(97) {
+    --left: 78%;
+    --duration: 7.3s;
+    --delay: 1.1s;
+}
+
+.star:nth-child(98) {
+    --left: 81%;
+    --duration: 4.8s;
+    --delay: 4.6s;
+}
+
+.star:nth-child(99) {
+    --left: 97%;
+    --duration: 6.6s;
+    --delay: 3.7s;
+}
+
+.star:nth-child(100) {
+    --left: 13%;
+    --duration: 5.1s;
+    --delay: 0.8s;
+}
+
+@keyframes starRain {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(600px);
+        opacity: 0;
+    }
+}
+
+/* --- Footer Styling --- */
+.footer-section {
+    background: linear-gradient(180deg,
+            #051130 0%,
+            #2B1D6C 50%,
+            #051130 100%);
+    padding: 100px 0 40px;
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+
+.footer-logo-wrap {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.footer-logo {
+    max-width: 350px;
+}
+
+.footer-divider {
+    border-top: 1px solid #54A0CA;
+    margin-bottom: 60px;
+}
+
+.footer-col-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #FAF9F5;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #FAF9F5;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 16px;
+    color: #FAF9F5;
+    line-height: 1.8;
+}
+
+/* 2x2 Grid for mobile footer columns */
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 40px;
+    }
+}
+
+/* Part 1: Revenue & Retention (Dark Starry Theme) */
+.revenue-retention-block,
+.management-block {
+    background: transparent !important;
+    /* Let master gradient show through */
+    position: relative;
+    z-index: 2;
+    /* In front of clouds */
+}
+
+.revenue-retention-block {
+    padding: 120px 0 60px;
+}
+
+.sparkle-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.sparkle-pos-left {
+    position: absolute;
+    left: 12%;
+    top: 29%;
+    width: 60px;
+    /* Smaller left sparkle */
+    opacity: 0.8;
+    animation: sparklePulse 4s infinite ease-in-out;
+}
+
+.sparkle-pos-right {
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    width: 60px;
+    opacity: 0.8;
+    animation: sparklePulse 3.5s infinite ease-in-out;
+}
+
+.sparkle-pos-right-mgmt {
+    position: absolute;
+    right: -6%;
+    top: 12%;
+    width: 60px;
+    opacity: 0.8;
+    animation: sparklePulse 3.5s infinite ease-in-out;
+}
+
+.overview-title {
+    font-size: 54.4px;
+    font-weight: 500;
+    margin-bottom: 70px;
+    font-family: var(--font-inter);
+    letter-spacing: -0.5px;
+}
+
+.revenue-retention-block .overview-title {
+    color: white;
+}
+
+/* Feature Boxes Styling */
+.feature-overview-box {
+    background: white;
+    border-radius: 12px;
+    padding: 45px 35px;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-overview-box:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.box-icon-wrap {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+.box-icon-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.box-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #002253;
+    margin-bottom: 20px;
+}
+
+.box-desc {
+    font-size: 18px;
+    color: #556b82;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Part 2: Management Block (Vibrant Pink Horizon) */
+.management-block {
+    padding: 60px 0 120px;
+}
+
+.management-block .overview-title {
+    color: #ffffff;
+}
+
+.management-block .container {
+    position: relative;
+    z-index: 3;
 }
 
 /* Bottom Growth Heading */
