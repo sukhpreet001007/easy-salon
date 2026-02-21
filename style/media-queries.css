@@ -149,6 +149,13 @@
         width: 180% !important;
         right: -40% !important;
     }
+    .footer-bottom{
+        font-size: 12px;
+    }
+
+    .footer-logo {
+    max-width: 250px;
+}
 }
 
 /* Tablet Specific Overrides (Portrait) */
