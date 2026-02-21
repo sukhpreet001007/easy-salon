@@ -450,7 +450,9 @@ body {
 
 @media (max-width: 991px) {
     .dashboard-overlay-animation {
-        top: 50%;
+        top: 56%;
+        /* Match desktop clearance to avoid covering avatars */
+        height: 44%;
     }
 }
 
@@ -3417,8 +3419,7 @@ body {
 .float-logo img {
     height: 45px;
     width: auto;
-    filter: brightness(0) invert(1);
-    /* Make logo white for dark bg */
+
 }
 
 .float-social-links a {
