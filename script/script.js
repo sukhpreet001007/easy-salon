@@ -125,5 +125,87 @@
         window.addEventListener('resize', () => updateCarousel(true));
     }
 
+    // 6. BRANDS SLIDER (Infinite Paging)
+    const brandRows = document.querySelectorAll('.brands-slider-row');
+    if (brandRows.length > 0) {
+        brandRows.forEach(row => {
+            const track = row.querySelector('.brands-slider-track');
+            const direction = row.getAttribute('data-direction'); // rtl or ltr
+
+            // 1. Clone items for infinite loop
+            const originalItems = Array.from(track.children);
+            originalItems.forEach(item => {
+                const clone = item.cloneNode(true);
+                track.appendChild(clone);
+            });
+
+            let currentIndex = 0;
+
+            function getPerView() {
+                return window.innerWidth <= 991 ? 2 : 4;
+            }
+
+            function getOriginalSlidesCount() {
+                return Math.ceil(originalItems.length / getPerView());
+            }
+
+            // Initial setup for LTR (start at the offset)
+            if (direction === 'ltr') {
+                currentIndex = getOriginalSlidesCount();
+                track.style.transition = 'none';
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            function moveSlide() {
+                const originalSlidesCount = getOriginalSlidesCount();
+
+                track.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+
+                if (direction === 'rtl') {
+                    currentIndex++;
+                    const offset = currentIndex * 100;
+                    track.style.transform = `translateX(-${offset}%)`;
+
+                    // If reached the duplicate set, snap back to start
+                    if (currentIndex >= originalSlidesCount) {
+                        setTimeout(() => {
+                            track.style.transition = 'none';
+                            currentIndex = 0;
+                            track.style.transform = `translateX(0)`;
+                        }, 800);
+                    }
+                } else {
+                    // LTR Direction
+                    currentIndex--;
+                    const offset = currentIndex * 100;
+                    track.style.transform = `translateX(-${offset}%)`;
+
+                    // If reached the start of the original set (scrolling right), snap back to clone end
+                    if (currentIndex <= 0) {
+                        setTimeout(() => {
+                            track.style.transition = 'none';
+                            currentIndex = originalSlidesCount;
+                            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                        }, 800);
+                    }
+                }
+            }
+
+            // Start auto-slide every 4 seconds
+            let slideInterval = setInterval(moveSlide, 4000);
+
+            // Handle Resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    currentIndex = (direction === 'ltr') ? getOriginalSlidesCount() : 0;
+                    track.style.transition = 'none';
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }, 250);
+            });
+        });
+    }
+
 })();
 

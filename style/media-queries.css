@@ -27,9 +27,8 @@
         /* Hide top social links on mobile */
     }
 
-    .btn-demo {
+    .main-navbar .btn-demo {
         display: none !important;
-        /* Hide top demo button on mobile */
     }
 
     /* Hero Responsive */
@@ -103,6 +102,24 @@
                 rgba(255, 255, 255, 0) 0%);
     }
 
+    .brand-origin {
+        padding: 4px 7px;
+    }
+
+    .country-name {
+        font-size: 12px;
+    }
+
+    .country-flag {
+        width: 18px;
+    }
+     .brand-unit {
+        flex: 0 0 50%;
+        padding: 0px;
+        gap: 8px;
+        margin: 0;
+        overflow: visible;
+    }
 }
 
 /* Tablet Specific Overrides (Portrait) */
@@ -130,6 +147,7 @@
         width: auto;
         min-width: 200px;
     }
+
 }
 
 /* TABLET LANDSCAPE (992px to 1199px)*/
@@ -201,6 +219,18 @@
     .dashboard-peek--bottom {
         height: 60px;
     }
+
+    /* Brands Slider Tablet Landscape */
+    .brand-unit {
+        flex: 0 0 25%;
+        /* 4 columns for tablet landscape */
+        padding: 0 15px;
+    }
+
+    .brand-card {
+        width: 190px;
+        height: 90px;
+    }
 }
 
 /* Hero & Navbar Adjustment for Large Tablet Landscape & Standard Desktop (992px to 1900px) */
@@ -237,5 +267,16 @@
         padding: 15px 22px !important;
         font-size: 1rem !important;
         width: auto !important;
+    }
+     /* Brands Slider Tablet Landscape */
+    .brand-unit {
+        flex: 0 0 20%;
+        /* 4 columns for tablet landscape */
+        padding: 0 15px;
+    }
+
+    .brand-card {
+        width: 190px;
+        height: 90px;
     }
 }
