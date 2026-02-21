@@ -68,7 +68,20 @@
             mobileCta.addEventListener('click', () => {
                 menuTriggers.forEach(t => t.classList.remove('active'));
                 mobileOverlay.classList.remove('active');
-                document.body.style.overflow = '';
+                // Don't manually clear overflow here, let modal handle it
+                // and we'll cleanup on hidden.bs.modal
+            });
+        }
+
+        // Fix for Mobile Scroll Lock (Conflict between menu and modal)
+        const demoModal = document.getElementById('ModalTogglesix');
+        if (demoModal) {
+            demoModal.addEventListener('hidden.bs.modal', function () {
+                // Force restore overflow if menu is closed
+                if (!mobileOverlay.classList.contains('active')) {
+                    document.body.style.overflow = '';
+                    document.body.style.paddingRight = ''; // Cleanup scrollbar compensation
+                }
             });
         }
     }
