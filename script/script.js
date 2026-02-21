@@ -41,27 +41,32 @@
     }
 
     // 4. MOBILE MENU TOGGLE
-    const mobileMenuTrigger = document.getElementById('mobileMenuTrigger');
+    const menuTriggers = document.querySelectorAll('.custom-toggler');
     const mobileOverlay = document.getElementById('mobileOverlay');
 
-    if (mobileMenuTrigger && mobileOverlay) {
-        mobileMenuTrigger.addEventListener('click', function () {
-            this.classList.toggle('active');
-            mobileOverlay.classList.toggle('active');
+    if (menuTriggers.length > 0 && mobileOverlay) {
+        menuTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function () {
+                // Sync all togglers' active state
+                const isActive = this.classList.contains('active');
+                menuTriggers.forEach(t => t.classList.toggle('active', !isActive));
 
-            // Lock body scroll when menu is open
-            if (mobileOverlay.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
+                mobileOverlay.classList.toggle('active', !isActive);
+
+                // Lock body scroll when menu is open
+                if (!isActive) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            });
         });
 
         // Close menu if CTA is clicked
         const mobileCta = mobileOverlay.querySelector('.btn-demo');
         if (mobileCta) {
             mobileCta.addEventListener('click', () => {
-                mobileMenuTrigger.classList.remove('active');
+                menuTriggers.forEach(t => t.classList.remove('active'));
                 mobileOverlay.classList.remove('active');
                 document.body.style.overflow = '';
             });
@@ -204,6 +209,18 @@
                     track.style.transform = `translateX(-${currentIndex * 100}%)`;
                 }, 250);
             });
+        });
+    }
+
+    // 7. FLOATING NAVBAR SCROLL LOGIC
+    const floatingNav = document.getElementById('floatingNav');
+    if (floatingNav) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                floatingNav.classList.add('visible');
+            } else {
+                floatingNav.classList.remove('visible');
+            }
         });
     }
 
