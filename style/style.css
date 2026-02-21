@@ -1293,7 +1293,7 @@ body {
     font-size: 24px;
     font-weight: 600;
     color: #002253;
-    margin-bottom: 50px;
+    margin-bottom: -45px;
     line-height: 30px;
     font-family: var(--font-inter);
 }
@@ -1456,6 +1456,7 @@ body {
 
     .growth-main-title {
         font-size: 28px;
+        line-height: normal;
     }
 
     .feature-card {
@@ -1599,30 +1600,89 @@ body {
 }
 
 @media (max-width: 991px) {
+    .marketing-white-bg {
+        padding: 40px 0;
+        overflow: hidden;
+    }
+
+    .marketing-features-rows {
+        margin-top: 40px;
+    }
+
     .marketing-row {
         flex-direction: column !important;
-        gap: 50px;
-        margin-bottom: 80px;
-        text-align: center;
+        gap: 30px;
+        margin-bottom: 60px;
+        text-align: left !important;
+        padding: 0 20px;
+        width: 100%;
+        max-width: 100%;
     }
 
     .marketing-row.row-reverse {
         flex-direction: column !important;
     }
 
-    .marketing-feature-title {
-        font-size: 30px;
+    .marketing-img-col {
+        width: 100%;
+        flex: none !important;
+        margin-bottom: 30px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        transform: translateX(0) !important;
     }
 
-    .circular-feature-frame {
-        width: 320px;
-        height: 320px;
+    .marketing-img-col.scroll-animate {
+        transform: translateY(30px) !important;
+    }
+
+    .marketing-img-col.scroll-animate.active {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+
+    .marketing-feature-img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .marketing-text-col {
+        width: 100%;
+        flex: none !important;
+        text-align: left !important;
+        padding: 0;
+    }
+
+    .marketing-feature-title {
+        font-size: 24px;
+        line-height: normal;
+        margin-bottom: 15px;
+        text-align: left !important;
+    }
+
+    .marketing-feature-title br {
+        display: none;
+    }
+
+    .marketing-feature-content {
+        text-align: left !important;
+    }
+
+    .marketing-feature-content p,
+    .marketing-feature-content ul,
+    .marketing-feature-content li {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 15px;
+        text-align: left !important;
     }
 }
 
-/* ==========================================================================
-   REVIEWS SECTION
-   ========================================================================== */
+/* REVIEWS SECTION */
 
 .reviews-section {
     padding: 100px 0 80px;
@@ -1706,14 +1766,12 @@ body {
     flex: 0 0 calc(33.333% - 20px);
     background: #F1F6FF;
     border-radius: 12px;
-    /* Less rounded, more rectangular */
     padding: 40px;
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-width: 480px;
-    /* Wider for rectangular look */
     height: auto;
 }
 
@@ -1809,7 +1867,7 @@ body {
     font-size: 18px;
 }
 
-/* Responsive */
+
 @media (max-width: 1200px) {
     .review-card {
         min-width: 340px;
@@ -1859,4 +1917,5 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #4A90DA;
 }
+
 /* Global scrollbar end*/
