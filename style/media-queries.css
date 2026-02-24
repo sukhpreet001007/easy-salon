@@ -132,8 +132,8 @@
 
     .feature-overview-box {
         padding: 35px 25px !important;
-        text-align: center;
-        align-items: center !important;
+        /* text-align: center; */
+        /* align-items: center !important; */
     }
 
     .box-title {
@@ -156,6 +156,10 @@
 
     .footer-logo {
         max-width: 250px;
+    }
+.marketing-thread-line,
+    .marketing-tick {
+        display: none !important;
     }
 }
 

@@ -45,31 +45,38 @@
     const mobileOverlay = document.getElementById('mobileOverlay');
 
     if (menuTriggers.length > 0 && mobileOverlay) {
+        const mobileVideoIframe = mobileOverlay.querySelector('.mobile-video-box iframe');
+        const originalVideoSrc = mobileVideoIframe ? mobileVideoIframe.getAttribute('src') : '';
+
+        function stopMobileVideo() {
+            if (mobileVideoIframe) {
+                // Resetting src stops the video
+                mobileVideoIframe.setAttribute('src', '');
+                mobileVideoIframe.setAttribute('src', originalVideoSrc);
+            }
+        }
+
         menuTriggers.forEach(trigger => {
             trigger.addEventListener('click', function () {
-                // Sync all togglers' active state
                 const isActive = this.classList.contains('active');
                 menuTriggers.forEach(t => t.classList.toggle('active', !isActive));
-
                 mobileOverlay.classList.toggle('active', !isActive);
 
-                // Lock body scroll when menu is open
                 if (!isActive) {
                     document.body.style.overflow = 'hidden';
                 } else {
                     document.body.style.overflow = '';
+                    stopMobileVideo();
                 }
             });
         });
 
-        // Close menu if CTA is clicked
         const mobileCta = mobileOverlay.querySelector('.btn-demo');
         if (mobileCta) {
             mobileCta.addEventListener('click', () => {
                 menuTriggers.forEach(t => t.classList.remove('active'));
                 mobileOverlay.classList.remove('active');
-                // Don't manually clear overflow here, let modal handle it
-                // and we'll cleanup on hidden.bs.modal
+                stopMobileVideo();
             });
         }
 

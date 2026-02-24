@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rated No.1 Salon Management Software | Free booking system</title>
+    <link rel="icon" href="assets/favicon.ico">
+    <meta name="description"
+        content="Billing & Stock management software for salons with FREE website integration for online appointments. Sell memberships, coupons, e-wallet, and run client referral programs.">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/media-queries.css">
+    <link rel="stylesheet" href="style/animations.css">
+    <link rel="stylesheet" href="style/thread.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+
+    <script src="https://www.google.com/recaptcha/api.js?render=your_key"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white main-navbar shadow-sm navbar-container">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.png" alt="Easy Salon Logo" class="logo-img">
+            </a>
+
+            <div class="custom-toggler" id="mobileMenuTrigger">
+                <div class="toggler-bars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <div class="ms-auto d-flex flex-column flex-lg-row align-items-lg-center gap-3 gap-lg-5 mt-3 mt-lg-0">
+                    <div class="social-links d-flex gap-3 align-items-center justify-content-center">
+                        <a href="https://www.facebook.com/geteasysoftware" target="_blank"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@geteasysoftware" target="_blank"><i
+                                class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/geteasysoftware/" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center gap-2 ms-lg-3">
+                        <img src="assets/canada.svg" alt="Canada Flag" class="flag-icon">
+
+                        <a href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Salon%20Software" target="_blank" class="phone-number text-decoration-none">
+                            +1 716 340 4934
+                        </a>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center gap-2">
+                        <img src="assets/india.webp" alt="India Flag" class="flag-icon">
+
+                        <a href="tel:+916283809300" class="phone-number text-decoration-none">
+                            +91 62838 09300
+                        </a>
+                    </div>
+
+                    <div class="btn-demo rounded-pill ms-lg-3" data-bs-toggle="modal" data-bs-target="#ModalTogglesix"
+                        style="cursor:pointer">
+                        Get Free Demo
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="floating-navbar" id="floatingNav">
+        <div class="floating-nav-container">
+            <a href="index.html" class="float-logo">
+                <img src="assets/drop-logo.png" alt="Easy Salon">
+            </a>
+
+
+
+            <div class="float-social-links d-none d-lg-flex gap-2 ms-lg-5">
+                <a href="https://www.facebook.com/geteasysoftware" target="_blank"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@geteasysoftware" target="_blank"><i
+                        class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/geteasysoftware/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <div class="float-contacts d-none d-lg-flex gap-4 align-items-center mx-auto">
+                <div class="float-contact-item">
+                    <i class="fa-solid fa-phone-volume vibrate-icon"></i>
+                    <span class="float-contact-number"> <a href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Salon%20Software" target="_blank"
+                            class="phone-number text-decoration-none">
+                            +1 716 340 4934
+                        </a></span>
+                </div>
+                <div class="float-contact-item">
+                    <i class="fa-solid fa-phone-volume vibrate-icon"></i>
+                    <span class="float-contact-number"> <a href="tel:+916283809300"
+                            class="phone-number text-decoration-none">
+                            +91 62838 09300
+                        </a></span>
+                </div>
+            </div>
+
+            <div class="btn-demo float-btn rounded-pill d-none d-lg-block" data-bs-toggle="modal"
+                data-bs-target="#ModalTogglesix">
+                Get Free Demo
+                <span></span><span></span><span></span><span></span>
+            </div>
+
+            <!-- Mobile Toggler in Floating Navbar -->
+            <div class="custom-toggler d-flex d-lg-none" id="floatingMenuTrigger">
+                <div class="toggler-bars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mobile-nav-overlay" id="mobileOverlay">
+        <div class="mobile-nav-content">
+
+            <div class="mobile-social-wrap">
+                <p class="menu-label">Follow Us</p>
+                <div class="mobile-social-links">
+                    <a href="https://www.facebook.com/geteasysoftware" style="--i:1" target="_blank"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@geteasysoftware" style="--i:2" target="_blank"><i
+                            class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/geteasysoftware/" style="--i:3" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Mobile Support Numbers -->
+            <div class="mobile-contact-wrap mt-5">
+                <p class="menu-label">Contact Us</p>
+                <div class="mobile-numbers-list">
+                    <a href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Salon%20Software" target="_blank" class="mobile-contact-item">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <span>+1 716 340 4934</span>
+                    </a>
+
+                    <a href="tel:+916283809300" class="mobile-contact-item">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <span>+91 62838 09300</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Mobile Video Section -->
+            <div class="mobile-video-wrap mt-5">
+                <p class="menu-label">Experience Easy Salon</p>
+                <div class="mobile-video-box">
+                    <iframe src="https://www.youtube.com/embed/Y8nN8GL813c?rel=0" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Main Mobile CTA -->
+            <div class="mobile-cta-wrap">
+                <div class="btn-demo btn-mobile-full rounded-pill" data-bs-toggle="modal"
+                    data-bs-target="#ModalTogglesix">
+                    Book Free Demo
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="blogs-section py-5">
+        <div class="container">
+            <h1 class="blogs-main-title text-center mb-5 scroll-animate drop-down">Blogs</h1>
+            <div class="row g-4">
+                <!-- Blog Card 1 -->
+                <div class="col-6 col-md-4">
+                    <a href="blog/blog-1.html" class="blog-card scroll-animate fade-up">
+                        <div class="blog-image-wrap">
+                            <img src="assets/blog-1.jpeg" alt="Trending Nail Art Designs Ideas">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">05 August 2024</span>
+                            <h3 class="blog-title">Trending Nail Art Designs Ideas</h3>
+                            <p class="blog-excerpt">Nail art is much more than just polishing the nails with paints, and
+                                creating design on it. In fact, it is an art, where every nail artist uses his ...</p>
+                            <div class="blog-footer">
+                                <span class="read-more">READ MORE <i class="fa-solid fa-arrow-right-long"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Blog Card 2 -->
+                <div class="col-6 col-md-4">
+                    <a href="blog/blog-1.html" class="blog-card scroll-animate fade-up" style="animation-delay: 0.1s;">
+                        <div class="blog-image-wrap">
+                            <img src="assets/blog-2.jpeg" alt="Why is salon management software getting popular">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">18 May 2024</span>
+                            <h3 class="blog-title">Why is salon management software getting popular all over India, and
+                                the globe?</h3>
+                            <p class="blog-excerpt">Well, the answer is quite easy, which is to say increased profits
+                                and less burden. It's the 21st century, the age of computers, where withi...</p>
+                            <div class="blog-footer">
+                                <span class="read-more">READ MORE <i class="fa-solid fa-arrow-right-long"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Blog Card 3 -->
+                <div class="col-6 col-md-4">
+                    <a href="blog/blog-1.html" class="blog-card scroll-animate fade-up" style="animation-delay: 0.2s;">
+                        <div class="blog-image-wrap">
+                            <img src="assets/blog-3.jpeg" alt="The Benefits of Using Salon Management Software">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">16 May 2024</span>
+                            <h3 class="blog-title">The Benefits of Using Salon Management Software: A Comprehensive
+                                Guide</h3>
+                            <p class="blog-excerpt">Running a business these days requires more than just talent and
+                                creativity. Besides that, effective management of appointments, staff, and invent...</p>
+                            <div class="blog-footer">
+                                <span class="read-more">READ MORE <i class="fa-solid fa-arrow-right-long"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="reviews-section">
+        <div class="container text-center">
+            <h2 class="reviews-main-title scroll-animate drop-down">Where Reviews Turn Into Revenue
+            </h2>
+
+            <div class="google-rating-wrap scroll-animate fade-up">
+                <img src="assets/google.png" alt="Google" class="google-logo">
+                <div class="stars-rating">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews-carousel-outer scroll-animate fade-up">
+            <div class="reviews-carousel-wrapper">
+                <div class="reviews-carousel-track">
+                    <!-- Review Card 1 -->
+                    <div class="review-card">
+                        <p class="review-text">I recently visited Lakmé Salon and had an amazing experience! I opted for
+                            a head massage, while my sister enjoyed a head wash and blow-dry.</p>
+                        <div class="review-author">
+                            <div class="avatar-wrap">
+                                <img src="assets/user-avatar.png" alt="User Avatar" class="author-avatar">
+                                <div class="avatar-badge"><img src="assets/left-sparkle.png" alt=""></div>
+                            </div>
+                            <div class="author-info">
+                                <h5 class="author-name">Animesh Aggarwal</h5>
+                                <p class="author-title">Founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review Card 2 -->
+                    <div class="review-card">
+                        <p class="review-text">The management software is a game changer. It streamlined our med spa’s
+                            bookings and staff schedules far more efficiently than before.</p>
+                        <div class="review-author">
+                            <div class="avatar-wrap">
+                                <img src="assets/avatar-1.avif" alt="User Avatar" class="author-avatar">
+                                <div class="avatar-badge"><img src="assets/left-sparkle.png" alt=""></div>
+                            </div>
+                            <div class="author-info">
+                                <h5 class="author-name">John william</h5>
+                                <p class="author-title">Salon Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review Card 3 -->
+                    <div class="review-card">
+                        <p class="review-text">Fantastic support team! Whenever we had a question about the reporting
+                            features, they guided us instantly. I highly recommend it.
+                        </p>
+                        <div class="review-author">
+                            <div class="avatar-wrap">
+                                <img src="assets/avatar-2.avif" alt="User Avatar" class="author-avatar">
+                                <div class="avatar-badge"><img src="assets/left-sparkle.png" alt=""></div>
+                            </div>
+                            <div class="author-info">
+                                <h5 class="author-name">Matthew Johnson</h5>
+                                <p class="author-title">Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review Card 4 -->
+                    <div class="review-card">
+                        <p class="review-text">Our customer retention has increased by 40% since using the automated
+                            marketing tools. Simple yet extremely powerful for growth.</p>
+                        <div class="review-author">
+                            <div class="avatar-wrap">
+                                <img src="assets/avatar-3.avif" alt="User Avatar" class="author-avatar">
+                                <div class="avatar-badge"><img src="assets/left-sparkle.png" alt=""></div>
+                            </div>
+                            <div class="author-info">
+                                <h5 class="author-name">Christopher Martin</h5>
+                                <p class="author-title">Marketing Head</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review Card 5 -->
+                    <div class="review-card">
+                        <p class="review-text">The interface is clean and intuitive. My staff needed no formal training
+                            and were booking appointments correctly from day one.</p>
+                        <div class="review-author">
+                            <div class="avatar-wrap">
+                                <img src="assets/avatar-4.avif" alt="User Avatar" class="author-avatar">
+                                <div class="avatar-badge"><img src="assets/left-sparkle.png" alt=""></div>
+                            </div>
+                            <div class="author-info">
+                                <h5 class="author-name">Mary Grace</h5>
+                                <p class="author-title">Director</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review Card 6 -->
+                    <div class="review-card">
+                        <p class="review-text">The real-time WhatsApp sync was exactly what we needed. Our clients love
+                            receiving instant confirmations on their phones without delay.
+                        </p>
+                        <div class="review-author">
+                            <div class="avatar-wrap">
+                                <img src="assets/avatar-5.avif" alt="User Avatar" class="author-avatar">
+                                <div class="avatar-badge"><img src="assets/left-sparkle.png" alt=""></div>
+                            </div>
+                            <div class="author-info">
+                                <h5 class="author-name">Andrew Clarke</h5>
+                                <p class="author-title">Franchise Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review Card 7 -->
+                    <div class="review-card">
+                        <p class="review-text">Financial reports are now just a click away. We can easily track daily
+                            earnings and inventory across all five city branches.</p>
+                        <div class="review-author">
+                            <div class="avatar-wrap">
+                                <img src="assets/avatar-6.webp" alt="User Avatar" class="author-avatar">
+                                <div class="avatar-badge"><img src="assets/left-sparkle.png" alt=""></div>
+                            </div>
+                            <div class="author-info">
+                                <h5 class="author-name">Amit Verma</h5>
+                                <p class="author-title">Entrepreneur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review Card 8 -->
+                    <div class="review-card">
+                        <p class="review-text">Switching from traditional registers to this digital platform was the
+                            best choice for our luxury spa. It truly feels like world-class software.</p>
+                        <div class="review-author">
+                            <div class="avatar-wrap">
+                                <img src="assets/avatar-7.jpg" alt="User Avatar" class="author-avatar">
+                                <div class="avatar-badge"><img src="assets/left-sparkle.png" alt=""></div>
+                            </div>
+                            <div class="author-info">
+                                <h5 class="author-name">David Anderson</h5>
+                                <p class="author-title">Spa Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center">
+            <div class="carousel-nav">
+                <button class="nav-btn prev-btn" id="prevReview">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" id="nextReview">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <footer class="footer-section">
+        <div class="stars-galaxy-container">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+
+        <div class="container">
+            <div class="footer-logo-wrap text-center">
+                <a href="index.html"><img src="assets/footer-logo.png" alt="Easy Software Logo" class="footer-logo"></a>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="row">
+                <!-- Column 1: Product -->
+                <div class="col-6 col-lg-3 footer-col">
+                    <h4 class="footer-col-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://geteasysoftware.com/salon" target="_blank">Beauty Salon Software</a></li>
+                        <li><a href="https://geteasysoftware.com/med-spa" target="_blank">Med SPA Software</a></li>
+                        <li><a href="https://geteasysoftware.com/aesthetic" target="_blank">Aesthetic Clinic
+                                Software</a></li>
+                        <li><a href="https://geteasysoftware.com/makeup-studio" target="_blank">Makeup Academy
+                                Software</a></li>
+                        <li><a href="https://geteasysoftware.com/nail-art" target="_blank">Nail Salon Software</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Company -->
+                <div class="col-6 col-lg-3 footer-col">
+                    <h4 class="footer-col-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <!-- <li><a href="#">Help</a></li> -->
+                        <!-- <li><a href="#">Community</a></li> -->
+                        <!-- <li><a href="#">Developer docs</a></li> -->
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Social -->
+                <div class="col-6 col-lg-3 footer-col">
+                    <h4 class="footer-col-title">Social</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.facebook.com/geteasysoftware">Facebook</a></li>
+                        <!-- <li><a href="#">LinkedIn</a></li> -->
+                        <!-- <li><a href="#">TikTok</a></li> -->
+                        <!-- <li><a href="#">X</a></li> -->
+                        <li><a href="https://www.youtube.com/@geteasysoftware">YouTube</a></li>
+                        <li><a href="https://www.instagram.com/geteasysoftware/">Instagram</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Legal -->
+                <div class="col-6 col-lg-3 footer-col">
+                    <h4 class="footer-col-title">Legal</h4>
+                    <ul class="footer-links">
+                        <!-- <li><a href="#">Acceptable Use Policy</a></li>
+                        <li><a href="#">Cookie Notice</a></li>
+                        <li><a href="#">Cookie Preferences</a></li> -->
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright © 2026 Easy Software. All Rights Reserved.<br>
+                    Easy Salon is owned and managed by Ekam Infotech</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="ModalTogglesix" tabindex="-1" aria-labelledby="demoModalLabel">
+        <div class="modal-dialog modal-dialog-centered demo-modal-dialog">
+            <div class="modal-content demo-modal-content">
+
+                <!-- Decorative blobs -->
+                <div class="demo-blob demo-blob--1"></div>
+                <div class="demo-blob demo-blob--2"></div>
+
+                <!-- Close button -->
+                <button type="button" class="demo-close-btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <!-- Header -->
+                <div class="demo-modal-header">
+                    <div class="demo-icon-wrap">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h2 class="demo-modal-title" id="demoModalLabel">Register for a Demo</h2>
+                    <p class="demo-modal-subtitle">Experience the future of salon management — free &amp; instant.</p>
+                </div>
+
+                <!-- Form -->
+                <form class="demo-form" id="demoForm" novalidate>
+
+                    <div class="demo-field-group">
+                        <div class="demo-field">
+                            <i class="fa-solid fa-store demo-field-icon"></i>
+                            <input type="text" id="businessName" class="demo-input" placeholder=" " required
+                                autocomplete="off">
+                            <label for="businessName" class="demo-label">Business Name</label>
+                            <span class="demo-focus-bar"></span>
+                        </div>
+
+                        <div class="demo-field">
+                            <i class="fa-solid fa-user demo-field-icon"></i>
+                            <input type="text" id="contactPerson" class="demo-input" placeholder=" " required
+                                autocomplete="off">
+                            <label for="contactPerson" class="demo-label">Contact Person Name</label>
+                            <span class="demo-focus-bar"></span>
+                        </div>
+
+                        <div class="demo-field">
+                            <i class="fa-solid fa-envelope demo-field-icon"></i>
+                            <input type="email" id="demoEmail" class="demo-input" placeholder=" " required
+                                autocomplete="off">
+                            <label for="demoEmail" class="demo-label">Email Address</label>
+                            <span class="demo-focus-bar"></span>
+                        </div>
+
+                        <div class="demo-field demo-field--phone">
+                            <i class="fa-solid fa-phone demo-field-icon"></i>
+                            <div class="demo-phone-input-group">
+                                <div class="demo-country-selector">
+                                    <select class="demo-country-code" id="countryCode">
+                                        <option value="+91">+91</option>
+                                        <option value="+1">+1</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down demo-chevron"></i>
+                                </div>
+                                <div class="demo-input-wrapper">
+                                    <input type="tel" id="contactNumber" class="demo-input" placeholder=" " required
+                                        autocomplete="off">
+                                    <label for="contactNumber" class="demo-label">Contact Number</label>
+                                </div>
+                            </div>
+                            <span class="demo-focus-bar"></span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="demo-submit-btn">
+                        <span class="demo-submit-text">Book My Free Demo</span>
+                        <span class="demo-submit-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                        <span></span><span></span><span></span><span></span>
+                    </button>
+
+                    <p class="demo-privacy"><i class="fa-solid fa-lock"></i> By registering, you agree to our <a
+                            href="terms.html">Terms & Conditions</a></p>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Mobile Fixed Bottom Bar -->
+    <div class="mobile-bottom-bar d-lg-none">
+        <div class="bottom-bar-container">
+            <button class="bottom-bar-btn book-btn" data-bs-toggle="modal" data-bs-target="#ModalTogglesix">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Book Now</span>
+            </button>
+            <button class="bottom-bar-btn call-btn" data-bs-toggle="modal" data-bs-target="#callModal">
+                <i class="fa-solid fa-phone-volume vibrate-icon"></i>
+                <span>Call Us</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Call Us Modal -->
+    <div class="modal fade" id="callModal" tabindex="-1" aria-labelledby="callModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm px-4">
+            <div class="modal-content contact-modal-content">
+                <div class="contact-modal-header">
+                    <h5 class="contact-modal-title" id="callModalLabel">Contact Us</h5>
+                    <p class="contact-modal-subtitle">We're here to help you 24/7</p>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body text-center p-4">
+                    <div class="contact-links-wrap d-flex flex-column gap-3">
+                        <a href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Salon%20Software" target="_blank" class="contact-modal-item">
+                            <i class="fa-brands fa-whatsapp me-3" style="font-size: 24px; color: #25D366;"></i>
+                            <span>+1 716 340 4934</span>
+
+                            <i class="fa-solid fa-phone ms-auto vibrate-icon"></i>
+                        </a>
+                        <a href="tel:+916283809300" class="contact-modal-item">
+                            <i class="fa-solid fa-phone me-3" style="font-size: 20px; color: #4ada4a;"></i>
+                            <span>+91 62838 09300</span>
+                            <i class="fa-solid fa-phone ms-auto vibrate-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/script.js"></script>
+    <script src="script/animations.js"></script>
+    <script src="script/thread.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
