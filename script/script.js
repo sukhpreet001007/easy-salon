@@ -237,5 +237,22 @@
         });
     }
 
+    // 8. VIDEO MODAL PLAYER CONTROL
+    const videoModal = document.getElementById('videoModal');
+    const heroVideo = document.getElementById('heroVideo');
+    const videoUrl = "https://www.youtube.com/embed/Y8nN8GL813c?autoplay=1&mute=1&controls=1&rel=0";
+
+    if (videoModal && heroVideo) {
+        // Use 'show' to start loading immediately
+        videoModal.addEventListener('show.bs.modal', function () {
+            heroVideo.setAttribute('src', videoUrl);
+        });
+
+        // Ensure source is cleared when hidden to stop playback
+        videoModal.addEventListener('hidden.bs.modal', function () {
+            heroVideo.setAttribute('src', '');
+        });
+    }
+
 })();
 

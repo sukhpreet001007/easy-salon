@@ -195,19 +195,67 @@
 }
 
 /* TABLET LANDSCAPE (992px to 1199px)*/
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1400px) {
     .navbar-container {
-        padding-left: 4%;
-        padding-right: 4%;
+        padding-left: 4% !important;
+        padding-right: 4% !important;
     }
 
     .hero-section {
-        padding: 0px 40px;
+        padding: 40px 4% !important;
+    }
+
+    .main-navbar .gap-lg-5 {
+        gap: 1.5rem !important;
+    }
+
+    .main-navbar .ms-lg-5 {
+        margin-left: 1.5rem !important;
+    }
+
+    .main-navbar .ms-lg-3 {
+        margin-left: 1rem !important;
+    }
+
+    .nav-custom-link {
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .contact-item {
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .social-links {
+        gap: 0.75rem !important;
+    }
+
+    .social-links a {
+        font-size: 20px;
+    }
+
+    .phone-number {
+        font-size: 14px;
+    }
+
+    .flag-icon {
+        width: 22px;
+    }
+
+    .btn-demo {
+        padding: 10px 20px;
+        font-size: 15px;
+        width: 170px;
+    }
+
+    .logo-img {
+        height: 60px;
     }
 
     .hero-container {
+        padding: 0 !important;
         gap: 30px;
-        padding: 0;
     }
 
     .hero-left {
@@ -267,7 +315,6 @@
     /* Brands Slider Tablet Landscape */
     .brand-unit {
         flex: 0 0 25%;
-        /* 4 columns for tablet landscape */
         padding: 0 15px;
     }
 
