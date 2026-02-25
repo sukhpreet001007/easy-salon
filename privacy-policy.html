@@ -10,8 +10,7 @@
         content="Billing & Stock management software for salons with FREE website integration for online appointments. Sell memberships, coupons, e-wallet, and run client referral programs.">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/media-queries.css">
-    <link rel="stylesheet" href="style/animations.css">
-    <link rel="stylesheet" href="style/thread.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -54,7 +53,8 @@
                     <div class="contact-item d-flex align-items-center gap-2 ms-lg-3">
                         <img src="assets/canada.svg" alt="Canada Flag" class="flag-icon">
 
-                        <a href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Salon%20Software" target="_blank" class="phone-number text-decoration-none">
+                        <a href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Salon%20Software" target="_blank"
+                            class="phone-number text-decoration-none">
                             +1 716 340 4934
                         </a>
                     </div>
@@ -98,7 +98,8 @@
             <div class="float-contacts d-none d-lg-flex gap-4 align-items-center mx-auto">
                 <div class="float-contact-item">
                     <i class="fa-solid fa-phone-volume vibrate-icon"></i>
-                    <span class="float-contact-number"> <a href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Salon%20Software" target="_blank"
+                    <span class="float-contact-number"> <a
+                            href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Salon%20Software" target="_blank"
                             class="phone-number text-decoration-none">
                             +1 716 340 4934
                         </a></span>
@@ -149,7 +150,8 @@
             <div class="mobile-contact-wrap mt-5">
                 <p class="menu-label">Contact Us</p>
                 <div class="mobile-numbers-list">
-                    <a href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Salon%20Software" target="_blank" class="mobile-contact-item">
+                    <a href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Salon%20Software" target="_blank"
+                        class="mobile-contact-item">
                         <i class="fa-solid fa-phone-volume"></i>
                         <span>+1 716 340 4934</span>
                     </a>
@@ -287,7 +289,7 @@
 
 
 
-       <div class="reviews-section">
+    <div class="reviews-section">
         <div class="container text-center">
             <h2 class="reviews-main-title scroll-animate drop-down">Where Reviews Turn Into Revenue
             </h2>
@@ -309,7 +311,7 @@
                             a head massage, while my sister enjoyed a head wash and blow-dry.</p>
                         <div class="review-author">
                             <div class="avatar-wrap">
-                                <img src="assets/user-avatar.png" alt="User Avatar" class="author-avatar">
+                                <img src="assets/avatar-9.avif" alt="User Avatar" class="author-avatar">
                                 <div class="avatar-badge"><img src="assets/left-sparkle.png" alt=""></div>
                             </div>
                             <div class="author-info">
@@ -582,7 +584,8 @@
                         <!-- <li><a href="#">Help</a></li> -->
                         <!-- <li><a href="#">Community</a></li> -->
                         <!-- <li><a href="#">Developer docs</a></li> -->
-                        <li><a href="#">Contact us</a></li>
+                        <li><a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#callModal">Contact
+                                us</a></li>
                     </ul>
                 </div>
 
@@ -721,28 +724,67 @@
         </div>
     </div>
 
-    <!-- Call Us Modal -->
+    <!-- Call Us / Contact Modal -->
     <div class="modal fade" id="callModal" tabindex="-1" aria-labelledby="callModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-sm px-4">
+        <div class="modal-dialog modal-dialog-centered contact-modal-dialog">
             <div class="modal-content contact-modal-content">
-                <div class="contact-modal-header">
-                    <h5 class="contact-modal-title" id="callModalLabel">Contact Us</h5>
-                    <p class="contact-modal-subtitle">We're here to help you 24/7</p>
-                </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="modal-body text-center p-4">
-                    <div class="contact-links-wrap d-flex flex-column gap-3">
-                        <a href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Salon%20Software" target="_blank" class="contact-modal-item">
-                            <i class="fa-brands fa-whatsapp me-3" style="font-size: 24px; color: #25D366;"></i>
-                            <span>+1 716 340 4934</span>
+                <!-- Decorative background elements -->
+                <div class="contact-blob contact-blob--1"></div>
+                <div class="contact-blob contact-blob--2"></div>
 
-                            <i class="fa-solid fa-phone ms-auto vibrate-icon"></i>
-                        </a>
-                        <a href="tel:+916283809300" class="contact-modal-item">
-                            <i class="fa-solid fa-phone me-3" style="font-size: 20px; color: #4ada4a;"></i>
-                            <span>+91 62838 09300</span>
-                            <i class="fa-solid fa-phone ms-auto vibrate-icon"></i>
-                        </a>
+                <div class="contact-modal-header">
+                    <div class="contact-icon-header">
+                        <i class="fa-solid fa-phone-volume vibrate-icon"></i>
+                    </div>
+                    <h5 class="contact-modal-title" id="callModalLabel">Get in Touch</h5>
+                    <p class="contact-modal-subtitle">We're here to help you 24/7 with expert support.</p>
+                </div>
+
+                <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="modal-body p-4">
+                    <div class="contact-grid">
+                        <div class="contact-group-label">Direct Calls & WhatsApp</div>
+                        <div class="contact-links-wrap d-flex flex-column gap-3">
+                            <a href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Salon%20Software" target="_blank"
+                                class="contact-modal-item">
+                                <div class="contact-item-icon whatsapp-bg">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-item-info">
+                                    <span class="contact-label">North America / Global</span>
+                                    <span class="contact-value">+1 716 340 4934</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right ms-auto arrow-icon"></i>
+                            </a>
+
+                            <a href="tel:+916283809300" class="contact-modal-item">
+                                <div class="contact-item-icon phone-bg">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="contact-item-info">
+                                    <span class="contact-label">India Support</span>
+                                    <span class="contact-value">+91 62838 09300</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right ms-auto arrow-icon"></i>
+                            </a>
+                        </div>
+
+                        <!-- <div class="contact-group-label mt-4">Support Channels</div>
+                        <div class="contact-links-wrap d-flex flex-column gap-3">
+                            <a href="mailto:support@geteasysoftware.com" class="contact-modal-item">
+                                <div class="contact-item-icon email-bg">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="contact-item-info">
+                                    <span class="contact-label">Email Support</span>
+                                    <span class="contact-value">support@geteasysoftware.com</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right ms-auto arrow-icon"></i>
+                            </a>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -751,8 +793,7 @@
 
 
     <script src="script/script.js"></script>
-    <script src="script/animations.js"></script>
-    <script src="script/thread.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>

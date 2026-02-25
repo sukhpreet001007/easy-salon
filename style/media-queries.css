@@ -197,7 +197,23 @@
     }
 
 }
+@media (max-width: 768px) {
+    .scroll-animate.slide-left {
+        transform: translateX(-30px);
+    }
 
+    .scroll-animate.slide-right {
+        transform: translateX(30px);
+    }
+
+    .scroll-animate.fade-up {
+        transform: translateY(30px);
+    }
+
+    .scroll-animate.drop-down {
+        transform: translateY(-40px);
+    }
+}
 /* TABLET LANDSCAPE (992px to 1199px)*/
 @media (min-width: 992px) and (max-width: 1400px) {
     .navbar-container {

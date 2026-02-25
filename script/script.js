@@ -263,3 +263,95 @@
 
 })();
 
+document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+        root: null,  
+        rootMargin: '0px',
+        threshold: 0.15  
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    animatedElements.forEach(el => observer.observe(el));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+   
+    const rowsContainer = document.querySelector('.marketing-features-rows');
+    const progressLine = document.querySelector('.marketing-thread-progress');
+    const threadLine = document.querySelector('.marketing-thread-line');
+    const ticks = document.querySelectorAll('.marketing-tick');
+
+    if (!rowsContainer || !progressLine || !threadLine) return;
+
+    
+    window.addEventListener('scroll', () => {
+      
+        const containerRect = rowsContainer.getBoundingClientRect();
+        const startOffset = containerRect.top; 
+        const totalHeight = containerRect.height;
+        const windowHeight = window.innerHeight;
+
+       
+        const activationPoint = windowHeight * 0.5;
+
+        
+
+        let progress = 0;
+
+        
+        const triggerPoint = windowHeight * 0.6;
+
+        if (startOffset < triggerPoint) {
+            const scrolledAmount = triggerPoint - startOffset;
+            progress = (scrolledAmount / (totalHeight * 0.8)) * 100;
+        }
+
+        
+        progress = Math.max(0, Math.min(progress, 100));
+
+        
+        progressLine.style.height = `${progress}%`;
+
+       
+        const endOfSection = containerRect.bottom;
+        if (endOfSection < windowHeight * 0.2) {
+            threadLine.classList.add('thread-hidden');
+           
+            ticks.forEach(tick => tick.style.opacity = '0');
+        } else {
+            threadLine.classList.remove('thread-hidden');
+            
+            ticks.forEach(tick => tick.style.opacity = '1');
+        }
+
+        
+        ticks.forEach((tick, index) => {
+            const tickRect = tick.getBoundingClientRect();
+            const tickTop = tickRect.top;
+
+            
+            const tickRelativeTop = tickTop - startOffset;
+            const currentLineHeight = (progress / 100) * totalHeight;
+
+           
+            const lineStart = startOffset + 50;
+            const lineTipY = lineStart + ((containerRect.height - 100) * (progress / 100));
+            
+
+            if (lineTipY >= tickTop + 20) {
+                tick.classList.add('active');
+            } else {
+                tick.classList.remove('active');
+            }
+        });
+    });
+});
