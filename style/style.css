@@ -3133,6 +3133,7 @@ body.modal-open .mobile-bottom-bar {
 
     }
 }
+
 /* aniamtion */
 .scroll-animate {
     opacity: 0;
@@ -3164,6 +3165,7 @@ body.modal-open .mobile-bottom-bar {
     opacity: 1;
     transform: translate(0) scale(1);
 }
+
 /* aniamtion */
 /* REVIEWS SECTION */
 
@@ -4643,11 +4645,28 @@ body.modal-open .mobile-bottom-bar {
 }
 
 .contact-modal-header {
-    background: linear-gradient(135deg, #002253 0%, #003580 100%);
+    background: linear-gradient(-45deg, #001a3d, #003580, #002253, #004499);
+    background-size: 400% 400%;
+    animation: contactHeaderGradient 15s ease infinite;
     padding: 45px 30px 30px;
     text-align: center;
     color: #fff;
     position: relative;
+    overflow: hidden;
+}
+
+@keyframes contactHeaderGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .contact-icon-header {

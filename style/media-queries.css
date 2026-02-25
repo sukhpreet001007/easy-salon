@@ -157,7 +157,8 @@
     .footer-logo {
         max-width: 250px;
     }
-.marketing-thread-line,
+
+    .marketing-thread-line,
     .marketing-tick {
         display: none !important;
     }
@@ -197,6 +198,7 @@
     }
 
 }
+
 @media (max-width: 768px) {
     .scroll-animate.slide-left {
         transform: translateX(-30px);
@@ -214,6 +216,7 @@
         transform: translateY(-40px);
     }
 }
+
 /* TABLET LANDSCAPE (992px to 1199px)*/
 @media (min-width: 992px) and (max-width: 1400px) {
     .navbar-container {
