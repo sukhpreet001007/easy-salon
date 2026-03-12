@@ -55,14 +55,15 @@
     position: relative;
     display: inline-flex;
     align-items: center;
+    margin-right: auto;       /* pushes other nav items right → AI sits near logo */
 }
 
 /* ── Trigger button ── */
 .ai-nav-trigger {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 7px 16px 7px 10px;
+    gap: 8px;
+    padding: 8px 18px 8px 12px;   /* slightly bigger hit-area */
     border-radius: 50px;
     background: transparent;
     border: none;
@@ -87,16 +88,31 @@
     line-height: 1;
 }
 
-/* "Easy AI" label */
+/* "Easy AI" label — flowing animated gradient */
 .ai-label-text {
-    font-size: .88rem;
+    font-size: .98rem;            /* slightly bigger */
     font-weight: 700;
     font-family: "Inter", sans-serif;
-    background: linear-gradient(125deg, #002253 0%, #FF9FA1 60%, #e05060 100%);
+    background: linear-gradient(
+        90deg,
+        #002253 0%,
+        #4a90d9 20%,
+        #FF9FA1 40%,
+        #ff6b7d 55%,
+        #FF9FA1 70%,
+        #4a90d9 85%,
+        #002253 100%
+    );
+    background-size: 220% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    letter-spacing: .2px;
+    letter-spacing: .3px;
+    animation: label-flow 3.2s linear infinite;
+}
+@keyframes label-flow {
+    0%   { background-position: 0%   center; }
+    100% { background-position: 220% center; }
 }
 
 /* "AI" chip badge */
@@ -295,13 +311,14 @@
     position: relative;
     display: inline-flex;
     align-items: center;
+    margin-left: 28px;       /* gap between logo and Easy AI item */
 }
 
 .float-ai-trigger {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 6px 14px 6px 10px;
+    gap: 8px;
+    padding: 8px 18px 8px 12px;   /* match top bar size */
     border-radius: 50px;
     background: transparent;
     border: none;
@@ -331,14 +348,9 @@
     display: inline-block;
     filter: drop-shadow(0 0 4px #FF9FA1);
 }
+/* Floating trigger label inherits the global animated gradient — no override needed */
 .float-ai-trigger .ai-label-text {
-    font-size: .83rem;
-    font-weight: 700;
-    font-family: "Inter", sans-serif;
-    background: linear-gradient(125deg, #002253 0%, #FF9FA1 60%, #e05060 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: .98rem;   /* match top bar */
 }
 .float-ai-trigger .ai-arrow {
     font-size: .63rem;
@@ -1123,4 +1135,108 @@
     /* border-left: 2px solid rgba(255, 159, 161, 0.35); */
     background: rgba(255, 159, 161, 0.05);
     text-shadow: 0 0 12px rgba(255, 159, 161, 0.3);
+}
+
+/* ── Explore AI Demo Button ── */
+.ai-btn-wrap {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.ai-explore-btn {
+    position: relative;
+    padding: 14px 36px;
+    background: rgba(255, 159, 161, 0.05);
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 0 0 1px rgba(255, 159, 161, 0.2);
+    /* animation: button-float 3s ease-in-out infinite; */
+}
+
+.ai-explore-btn .btn-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ai-explore-btn .btn-content i {
+    font-size: 1.1rem;
+    color: #FF9FA1;
+    transition: transform 0.4s ease;
+}
+
+.ai-explore-btn .btn-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 159, 161, 0.4) 0%, transparent 70%);
+    opacity: 0;
+    transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+    z-index: 1;
+}
+
+.ai-explore-btn .btn-border {
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    padding: 1.5px;
+    background: linear-gradient(90deg, #FF9FA1, #4a90d9, #FF9FA1);
+    background-size: 200% auto;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.6;
+    animation: border-flow 3s linear infinite;
+}
+
+.ai-explore-btn:hover {
+    background: rgba(255, 159, 161, 0.12);
+    box-shadow: 0 0 25px rgba(255, 159, 161, 0.25), 0 0 0 1px rgba(255, 159, 161, 0.4);
+    animation-play-state: paused;
+}
+
+.ai-explore-btn:hover .btn-glow {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+}
+
+.ai-explore-btn:hover .btn-content i {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.ai-explore-btn:hover .btn-border {
+    opacity: 1;
+    animation-duration: 1.5s;
+}
+
+@keyframes button-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes border-flow {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@media (max-width: 767px) {
+    .ai-btn-wrap { margin-top: 30px; }
+    .ai-explore-btn { padding: 12px 28px; font-size: 0.95rem; }
 }
